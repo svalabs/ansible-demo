@@ -1,0 +1,6 @@
+- name: copy over website data 
+  copy:
+    src: /root/ansible-demo/files/website
+    dest: /var/www/localhost/htdocs/
+    remote_src: yes
+
