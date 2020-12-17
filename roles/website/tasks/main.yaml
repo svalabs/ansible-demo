@@ -4,3 +4,9 @@
     dest: /var/www/localhost/htdocs/
     remote_src: yes
 
+- name: add color to css
+  lineinfile:
+    path: /var/www/localhost/htdocs/assets/css/main.css
+    regexp: '^		background: linear-gradient'
+    line: "background: linear-gradient(to bottom, {{background_color}}, white 80%, rgb(29, 60, 117));"
+    line: Listen 8080
