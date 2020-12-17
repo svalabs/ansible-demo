@@ -1,0 +1,4 @@
+- name: Install apache2
+  apk:
+    name: apache2
+    state: present
