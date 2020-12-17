@@ -1,5 +1,5 @@
 - name: Install apache2
-  shell: apk add apache2 || true
+  shell: apk add apache2; true
   args:
     creates: /usr/sbin/httpd
 
@@ -8,6 +8,7 @@
   shell: ps -ef | grep -v grep | grep httpd
   ignore_errors: yes
   changed_when: false
+  failed_when: "httpd_status.rc == 2"
   register: httpd_status
 
 - name: start apache
