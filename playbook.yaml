@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  vars:
+    background_color: red
   roles:
     - httpd
     - website
