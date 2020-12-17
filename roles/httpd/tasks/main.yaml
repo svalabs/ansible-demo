@@ -1,4 +1,2 @@
 - name: Install apache2
-  apk:
-    name: apache2
-    state: present
+  shell: apk add apache2 || true
