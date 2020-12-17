@@ -1,2 +1,4 @@
 - name: Install apache2
   shell: apk add apache2 || true
+  args:
+    creates: /usr/sbin/httpd
