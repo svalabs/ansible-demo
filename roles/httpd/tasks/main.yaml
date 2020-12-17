@@ -3,5 +3,13 @@
   args:
     creates: /usr/sbin/httpd
 
+- name: Check if Namenode is running
+  tags: namenode
+  shell: ps -ef | grep -v grep | grep httpd
+  ignore_errors: yes
+  changed_when: false
+  register: httpd_status
+
 - name: start apache
   shell: nohup httpd & 
+  when: httpd_status.rc == 1
